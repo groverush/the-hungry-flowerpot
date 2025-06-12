@@ -6,17 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private float speed = 2.5f;
-  //  private float turnSpeed = 25.0f;
+    //  private float turnSpeed = 25.0f;
     private float horizontalInput;
     private float verticalInput;
     private Rigidbody playerRB;
     public GameObject missilePrefab;        // Asigna el prefab en el inspector
-    public Transform launchPoint;           // Un GameObject vacío en la posición de disparo
+    public Transform launchPoint;           // Un GameObject vacï¿½o en la posiciï¿½n de disparo
     public float launchForce = 20f;
     // Start is called before the first frame update
     void Start()
     {
-       playerRB= GetComponent<Rigidbody>(); 
+        playerRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void LateUpdate()
     {
         Vector3 cameraForward = Camera.main.transform.forward;
-        cameraForward.y = 0; // Asegura que la dirección sea horizontal
+        cameraForward.y = 0; // Asegura que la direcciï¿½n sea horizontal
         Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
