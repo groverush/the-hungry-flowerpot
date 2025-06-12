@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -17,12 +15,6 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(ReturnObject());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator ReturnObject()
