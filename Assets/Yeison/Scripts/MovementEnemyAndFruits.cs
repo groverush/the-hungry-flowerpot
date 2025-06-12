@@ -40,10 +40,21 @@ public class MovementEnemyAndFruits : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "LeftWall")
+        // Eliminar el objeto si colisiona con las paredes
+        if (other.gameObject.tag == "RightWall" && leftWall)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (other.gameObject.tag == "LeftWall" && rightWall)
+        {
+            Destroy(this.gameObject);
+        }
+
+        // cambia su orientación dependiendo de la pared con la que colisiona
+        if (other.gameObject.tag == "LeftWall")
         {
             leftWall = true; rightWall = false; frontWall = false;
-            //Debug.Log(leftWall);
         }
 
         if (other.gameObject.tag == "RightWall")
@@ -54,18 +65,6 @@ public class MovementEnemyAndFruits : MonoBehaviour
         if (other.gameObject.tag == "FrontWall")
         {
             leftWall = false; rightWall = false; frontWall = true;
-        }
-
-        if(other.gameObject.tag == "RightWall" && leftWall)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("derecha");
-        }
-
-        if (other.gameObject.tag == "LeftWall" && rightWall)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("izquierda");
         }
     }
 }
