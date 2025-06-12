@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MovementEnemyAndFruits : MonoBehaviour
 {
-    Transform transform;
     Rigidbody rigidbody;
     public SpawnManager spawnManager;
     private bool leftWall, rightWall, frontWall;
@@ -44,6 +43,7 @@ public class MovementEnemyAndFruits : MonoBehaviour
         if(other.gameObject.tag == "LeftWall")
         {
             leftWall = true; rightWall = false; frontWall = false;
+            //Debug.Log(leftWall);
         }
 
         if (other.gameObject.tag == "RightWall")
@@ -54,6 +54,18 @@ public class MovementEnemyAndFruits : MonoBehaviour
         if (other.gameObject.tag == "FrontWall")
         {
             leftWall = false; rightWall = false; frontWall = true;
+        }
+
+        if(other.gameObject.tag == "RightWall" && leftWall)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("derecha");
+        }
+
+        if (other.gameObject.tag == "LeftWall" && rightWall)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("izquierda");
         }
     }
 }
