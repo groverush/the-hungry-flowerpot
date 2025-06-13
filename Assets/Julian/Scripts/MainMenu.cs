@@ -14,13 +14,19 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Main Scene");
-        audioSource.PlayOneShot(buttonSound, 1f);
+        audioSource.PlayOneShot(buttonSound, 2f);
     }
 
     public void GoToInstructions()
     {
         SceneManager.LoadScene("Instructions");
-        audioSource.PlayOneShot(buttonSound, 1f);
+        audioSource.PlayOneShot(buttonSound, 2f);
+
+    }
+     public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+        audioSource.PlayOneShot(buttonSound, 2f);
 
     }
 }
