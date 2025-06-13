@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    private float speed = 2.5f;
+    [SerializeField] private float speed;
     //  private float turnSpeed = 25.0f;
     private float horizontalInput;
     private float verticalInput;
@@ -13,10 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject missilePrefab;        // Asigna el prefab en el inspector
     public Transform launchPoint;           // Un GameObject vac�o en la posici�n de disparo
     public float launchForce = 20f;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.StartGame();
+
     }
 
     // Update is called once per frame
