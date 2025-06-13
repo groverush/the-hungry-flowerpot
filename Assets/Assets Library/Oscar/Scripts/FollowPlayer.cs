@@ -25,8 +25,8 @@ public class FollowPlayer : MonoBehaviour
 
     void LateUpdate()
     {
-        // Coincide la rotación de la cámara con la del jugador
-        //transform.position = player.transform.position + offset;
+        // Coincide la rotaciï¿½n de la cï¿½mara con la del jugador
+        // transform.position = player.transform.position + offset;
         transform.position = player.transform.position + player.transform.TransformDirection(offset);
         transform.LookAt(player.transform.position + Vector3.up * 1.5f);
     }
