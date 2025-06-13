@@ -7,6 +7,9 @@ TagManager:
   - LeftWall
   - RightWall
   - FrontWall
+  - Missile
+  - Animal
+  - Fruit
   layers:
   - Default
   - TransparentFX
