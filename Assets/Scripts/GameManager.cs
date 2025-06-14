@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         scoreText.gameObject.SetActive(true);
         timeLeftText.gameObject.SetActive(true);
-        StartCoroutine("StartCountdown", 60);
+        StartCoroutine("StartCountdown", 50);
 
     }
 
